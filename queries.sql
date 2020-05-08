@@ -1,3 +1,9 @@
+-- isLabPopular
+SELECT COUNT(*)
+FROM vaccines_labs_view vl
+WHERE vl.lab_id = 30
+AND vl.vaccine_productivity < 20;
+
 -- getTotalWages
 SELECT COALESCE(SUM(salary), 0)
 FROM employees

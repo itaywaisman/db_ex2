@@ -91,20 +91,21 @@ public class Solution {
             createVaccinesLabsStatement.closeOnCompletion();
 
             PreparedStatement createVaccinesLabsViewStatement = connection.prepareStatement(
-                    "CREATE OR REPLACE VIEW public.vaccines_labs_view AS" +
-                        "SELECT v.id AS vaccine_id," +
-                        "   l.id AS lab_id," +
-                        "   v.name AS vaccine_name," +
-                        "   v.cost AS vaccine_cost," +
-                        "   v.productivity AS vaccine_productivity," +
-                        "   l.name AS lab_name," +
-                        "   l.city AS lab_city," +
-                        "   l.active AS is_lab_active" +
-                        "FROM vaccines v" +
-                        "JOIN vaccines_labs vl ON vl.vaccine_id = v.id" +
-                        "JOIN labs l ON l.id = vl.lab_id;" +
+                    "CREATE OR REPLACE VIEW public.vaccines_labs_view " +
+                        "AS " +
+                        "SELECT v.id AS vaccine_id, " +
+                        "   l.id AS lab_id, " +
+                        "   v.name AS vaccine_name, " +
+                        "   v.cost AS vaccine_cost, " +
+                        "   v.productivity AS vaccine_productivity, " +
+                        "   l.name AS lab_name, " +
+                        "   l.city AS lab_city, " +
+                        "   l.active AS is_lab_active " +
+                        "FROM vaccines v " +
+                        "JOIN vaccines_labs vl ON vl.vaccine_id = v.id " +
+                        "JOIN labs l ON l.id = vl.lab_id; " +
                         "" +
-                        "ALTER TABLE public.vaccines_labs_view" +
+                        "ALTER TABLE public.vaccines_labs_view " +
                         "    OWNER TO java;"
             );
             createVaccinesLabsViewStatement.executeUpdate();
@@ -112,19 +113,20 @@ public class Solution {
 
 
             PreparedStatement createEmployeesLabsViewStatement = connection.prepareStatement(
-                    "CREATE OR REPLACE VIEW public.employees_labs_view AS" +
-                        "SELECT e.id AS employee_id," +
-                        "   l.id AS lab_id," +
-                        "   e.name AS employee_name," +
-                        "   e.city AS employee_city," +
-                        "   l.name AS lab_name," +
-                        "   l.city AS lab_city," +
-                        "   l.active AS is_lab_active" +
-                        "FROM employees e" +
-                        "JOIN employees_labs el ON el.employee_id = e.id" +
-                        "JOIN labs l ON l.id = el.lab_id;" +
+                    "CREATE OR REPLACE VIEW public.employees_labs_view " +
+                        "AS " +
+                        "SELECT e.id AS employee_id, " +
+                        "   l.id AS lab_id, " +
+                        "   e.name AS employee_name, " +
+                        "   e.city AS employee_city, " +
+                        "   l.name AS lab_name, " +
+                        "   l.city AS lab_city, " +
+                        "   l.active AS is_lab_active " +
+                        "FROM employees e " +
+                        "JOIN employees_labs el ON el.employee_id = e.id " +
+                        "JOIN labs l ON l.id = el.lab_id; " +
                         "" +
-                        "ALTER TABLE public.employees_labs_view" +
+                        "ALTER TABLE public.employees_labs_view " +
                         "    OWNER TO java;"
             );
             createEmployeesLabsViewStatement.executeUpdate();
