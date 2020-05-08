@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="‏‏236363_spring_20_hw2" />
+        <module name="‏‏236363_spring_20_hw2_solution" />
+        <module name="236363_winter_19-20_hw2_solution" />
+        <module name="236363_winter_18-19_hw2" />
+        <module name="db_ex2" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
